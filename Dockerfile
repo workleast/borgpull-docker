@@ -3,6 +3,8 @@ LABEL maintainer="workleast.com"
 
 ENV BACKUP_ADDR=0.0.0.0
 ENV TZ=Asia/Ho_Chi_Minh
+ENV ARCHIVE_NAME=archive-{now:%Y-%m-%dT%H:%M:%S}
+ENV TARGET_DIR=/
 
 #Install Borg & SSH
 RUN apk add --no-cache \
