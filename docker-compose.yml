@@ -1,0 +1,22 @@
+services:
+  borgpull:
+    build:
+      context: .
+    restart: always
+    image: workleast/borgpull
+    container_name: borgpull
+    volumes:
+      - ~/backups:/backups
+      - ./config/ssh/id_rsa:/root/.ssh/id_rsa
+      - ./config/crontab.txt:/etc/crontabs/root
+    environment:
+      TZ: "Asia/Ho_Chi_Minh"
+      BACKUP_ADDR: "root@172.30.1.78"
+      ARCHIVE_NAME: "archive-{now:%Y-%m-%dT%H:%M:%S}"
+      TARGET_DIR: "/home"
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined

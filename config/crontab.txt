@@ -1,0 +1,2 @@
+# at 13:30 everyday
+0 30 13 * * * /usr/local/bin/borgpull create >> /var/log/borgpull
