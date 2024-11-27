@@ -5,6 +5,7 @@ ENV BACKUP_ADDR=0.0.0.0
 ENV TZ=Asia/Ho_Chi_Minh
 ENV ARCHIVE_NAME=archive-{now:%Y-%m-%dT%H:%M:%S}
 ENV TARGET_DIR=/
+ENV BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
 
 #Install Borg & SSH
 RUN apk add --no-cache \
