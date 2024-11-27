@@ -6,14 +6,14 @@ services:
     image: workleast/borgpull
     container_name: borgpull
     volumes:
-      - ~/backups:/backups
+      - path/to/repository:/backups # replace with your actual path to repository directory here
       - ./config/ssh/id_rsa:/root/.ssh/id_rsa
       - ./config/crontab.txt:/etc/crontabs/root
     environment:
       TZ: "Asia/Ho_Chi_Minh"
-      BACKUP_ADDR: "root@172.30.1.78"
+      BACKUP_ADDR: "user@server_ip" # replace with your actual backup server's address here
       ARCHIVE_NAME: "archive-{now:%Y-%m-%dT%H:%M:%S}"
-      TARGET_DIR: "/home"
+      TARGET_DIR: "/" # replace with your target directory (to be backed up) in the backup server
     cap_add:
       - SYS_ADMIN
     devices:
