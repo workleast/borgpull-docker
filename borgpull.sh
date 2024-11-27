@@ -33,7 +33,9 @@ esac
 
 # mount server's root directory
 mkdir $MOUNT_DIR
-sshfs -o allow_other -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${BACKUP_ADDR}:/ $MOUNT_DIR
+sshfs -o allow_other -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${BACKUP_ADDR}:/ $MOUNT_DIR || echo "Connection to server failed, please check your settings" exit 1
+echo "Connected to server, please wait..."
+
 # mount borg's repo
 mkdir $MOUNT_DIR/borgrepo
 mount --bind /backups $MOUNT_DIR/borgrepo
