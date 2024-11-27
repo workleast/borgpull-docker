@@ -24,4 +24,7 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY borgpull.sh /usr/local/bin/borgpull
 
+RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/borgpull
+
 CMD ["/usr/bin/supervisord"]
