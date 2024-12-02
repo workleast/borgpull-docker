@@ -1,6 +1,8 @@
 # borgpull-docker
 A docker container that run Borg backup in pull mode
 
+Xem hướng dẫn sử dụng bằng Tiếng Việt tại đây: https://workleast.com/sao-luu-du-lieu-voi-borg-pull-docker/
+
 Borg Backup Pull Mode Docker Container enabled ability to backup your data by pulling them from your server without the need of setting up a dedicated backup server.
 
 Usage
